@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbkmqnyqc8khd"]
+
+[ext_resource type="Script" uid="uid://dcm2ap5b80ldt" path="res://player/player.gd" id="1_yw30f"]
+[ext_resource type="PackedScene" uid="uid://wo72c7k3ntqt" path="res://player/bullet.tscn" id="2_g6k8r"]
+[ext_resource type="Texture2D" uid="uid://cotlns6yu4k63" path="res://player/tank_cannon.tres" id="2_qjkh3"]
+[ext_resource type="Texture2D" uid="uid://bd00nejquleh1" path="res://player/tank_track.tres" id="3_g6k8r"]
+[ext_resource type="Texture2D" uid="uid://2jmnj3rvp01h" path="res://player/tank_body.tres" id="4_boad6"]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_yw30f")
+bullet_scene = ExtResource("2_g6k8r")
+shot_velocity = Vector2(100, -100)
+shot_gravity = Vector2(0, 98)
+max_shots = null
+metadata/_edit_group_ = true
+
+[node name="CannonPivot" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -58)
+
+[node name="Cannon" type="Sprite2D" parent="CannonPivot"]
+texture = ExtResource("2_qjkh3")
+centered = false
+offset = Vector2(-2.09, -8.36)
+
+[node name="Track" type="Sprite2D" parent="."]
+position = Vector2(0, -18)
+texture = ExtResource("3_g6k8r")
+
+[node name="Body" type="Sprite2D" parent="."]
+position = Vector2(0, -44)
+texture = ExtResource("4_boad6")

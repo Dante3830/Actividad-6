@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dky1hhb734ekn"]
+
+[ext_resource type="Texture2D" uid="uid://cuwxh6wnak2uc" path="res://common/tanks_vector.svg" id="1_y3k41"]
+
+[resource]
+atlas = ExtResource("1_y3k41")
+region = Rect2(94, 520, 20, 16)

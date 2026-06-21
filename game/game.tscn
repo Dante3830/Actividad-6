@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dddvdqyteaair"]
+
+[ext_resource type="PackedScene" uid="uid://cbkmqnyqc8khd" path="res://player/player.tscn" id="1_vasa2"]
+[ext_resource type="PackedScene" uid="uid://djs0p0xd6t3tg" path="res://targets/target_01.tscn" id="2_vasa2"]
+
+[node name="Game" type="Node2D" unique_id=2041879524]
+
+[node name="Background" type="CanvasLayer" parent="." unique_id=618521964]
+layer = -1
+
+[node name="Back" type="Polygon2D" parent="Background" unique_id=1689509918]
+color = Color(0.0877131, 0.568007, 0.874544, 1)
+polygon = PackedVector2Array(-2, 1, 1151, 0, 1152, 650, -3, 655)
+
+[node name="Floor" type="Polygon2D" parent="Background" unique_id=1768492874]
+color = Color(0.588887, 0.28667, 0, 1)
+polygon = PackedVector2Array(-3, 549, 1153, 553, 1152, 650, -3, 655)
+
+[node name="Player" parent="." unique_id=516635927 instance=ExtResource("1_vasa2")]
+position = Vector2(150, 550)
+max_shots = 3
+
+[node name="BulletContainer" type="Node2D" parent="." unique_id=1827323379]
+unique_name_in_owner = true
+
+[node name="Target" parent="." unique_id=1855967574 instance=ExtResource("2_vasa2")]
+position = Vector2(849, 407)
+
+[node name="Region Random" type="Panel" parent="." unique_id=425243369]
+offset_left = 532.0
+offset_top = 3.0
+offset_right = 1143.0
+offset_bottom = 547.0
