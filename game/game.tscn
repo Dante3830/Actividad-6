@@ -1,9 +1,17 @@
 [gd_scene format=3 uid="uid://dddvdqyteaair"]
 
+[ext_resource type="Script" uid="uid://ea4hphs4lv1s" path="res://game/game.gd" id="1_h7iqs"]
 [ext_resource type="PackedScene" uid="uid://cbkmqnyqc8khd" path="res://player/player.tscn" id="1_vasa2"]
 [ext_resource type="PackedScene" uid="uid://djs0p0xd6t3tg" path="res://targets/target_01.tscn" id="2_vasa2"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4fuuu"]
+size = Vector2(606, 537)
+
 [node name="Game" type="Node2D" unique_id=2041879524]
+script = ExtResource("1_h7iqs")
+target_scene = ExtResource("2_vasa2")
+metadata/_edit_vertical_guides_ = [533.0, 1141.0]
+metadata/_edit_horizontal_guides_ = [5.0, 546.0]
 
 [node name="Background" type="CanvasLayer" parent="." unique_id=618521964]
 layer = -1
@@ -18,7 +26,6 @@ polygon = PackedVector2Array(-3, 549, 1153, 553, 1152, 650, -3, 655)
 
 [node name="Player" parent="." unique_id=516635927 instance=ExtResource("1_vasa2")]
 position = Vector2(150, 550)
-max_shots = 3
 
 [node name="BulletContainer" type="Node2D" parent="." unique_id=1827323379]
 unique_name_in_owner = true
@@ -26,8 +33,10 @@ unique_name_in_owner = true
 [node name="Target" parent="." unique_id=1855967574 instance=ExtResource("2_vasa2")]
 position = Vector2(849, 407)
 
-[node name="Region Random" type="Panel" parent="." unique_id=425243369]
-offset_left = 532.0
-offset_top = 3.0
-offset_right = 1143.0
-offset_bottom = 547.0
+[node name="SpawnRegion" type="Area2D" parent="." unique_id=86007182]
+position = Vector2(836, 280)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnRegion" unique_id=2057946759]
+position = Vector2(2, -3.5)
+shape = SubResource("RectangleShape2D_4fuuu")
+disabled = true

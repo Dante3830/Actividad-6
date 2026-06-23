@@ -32,22 +32,25 @@ class_name Player
 ## Cuánto tiempo (en segundos) de vuelo dibujamos para cada trayectoria.
 @export var trajectory_time:float = 2.0
 
+@onready var cannon_pivot = $CannonPivot/Cannon
+
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
-
+	
 	# Subir/bajar el ángulo mientras se mantiene presionada la flecha correspondiente.
 	if Input.is_action_pressed(&"ui_up"):
 		current_angle_deg += angle_change_speed * delta
 	if Input.is_action_pressed(&"ui_down"):
 		current_angle_deg -= angle_change_speed * delta
-
+	
+	cannon_pivot.rotation = deg_to_rad(-current_angle_deg)
+	
 	if Input.is_action_just_pressed(&"Shoot"):
 		var bullet:Bullet = bullet_scene.instantiate()
 		bullet.shot_gravity = shot_gravity
 		bullet.shot_velocity = _get_velocity_for_angle(current_angle_deg)
 		bullet.position = %CannonPivot.global_position
-
 		var container_node = self
 		if has_node("%BulletContainer"):
 			container_node = %BulletContainer
