@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://t4phu1kqe12"]
+
+[ext_resource type="Script" uid="uid://0jivnerdlnn2" path="res://addons/target spawner/target_spawner_button.gd" id="1_6md3i"]
+[ext_resource type="Script" uid="uid://cdf4psiq4k12o" path="res://addons/target spawner/addon_resource_picker.gd" id="2_k2ll6"]
+
+[node name="TargetSpawner" type="VBoxContainer" unique_id=201361341]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_6md3i")
+
+[node name="AddonResourcePicker" type="EditorResourcePicker" parent="." unique_id=531589504]
+layout_mode = 2
+base_type = "PackedScene"
+script = ExtResource("2_k2ll6")
+metadata/_custom_type_script = "uid://cdf4psiq4k12o"
+
+[node name="SpawnButton" type="Button" parent="." unique_id=2136541606]
+layout_mode = 2
+text = "Spawnear Target"
+
+[connection signal="pressed" from="SpawnButton" to="." method="_on_spawn_button_pressed"]

@@ -19,6 +19,10 @@ run/main_scene="uid://dddvdqyteaair"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/addons/plugin.cfg", "res://addons/target spawner/plugin.cfg")
+
 [global_group]
 
 Bullet=""

@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://dddvdqyteaair"]
 
-[ext_resource type="Script" uid="uid://ea4hphs4lv1s" path="res://game/game.gd" id="1_h7iqs"]
 [ext_resource type="PackedScene" uid="uid://cbkmqnyqc8khd" path="res://player/player.tscn" id="1_vasa2"]
 [ext_resource type="PackedScene" uid="uid://djs0p0xd6t3tg" path="res://targets/target_01.tscn" id="2_vasa2"]
 
@@ -8,8 +7,6 @@
 size = Vector2(606, 537)
 
 [node name="Game" type="Node2D" unique_id=2041879524]
-script = ExtResource("1_h7iqs")
-target_scene = ExtResource("2_vasa2")
 metadata/_edit_vertical_guides_ = [533.0, 1141.0]
 metadata/_edit_horizontal_guides_ = [5.0, 546.0]
 
