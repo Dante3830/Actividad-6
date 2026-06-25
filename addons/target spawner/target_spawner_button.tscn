@@ -9,6 +9,7 @@ offset_bottom = 40.0
 script = ExtResource("1_6md3i")
 
 [node name="AddonResourcePicker" type="EditorResourcePicker" parent="." unique_id=531589504]
+unique_name_in_owner = true
 layout_mode = 2
 base_type = "PackedScene"
 script = ExtResource("2_k2ll6")
